@@ -4,10 +4,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "starbuzz";
+    private static final String DB_NAME = "starbuzz";
     private static final int DB_VERSION = 1;
-    StarbuzzDatabaseHelper(Context context) {
 
+    StarbuzzDatabaseHelper(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
