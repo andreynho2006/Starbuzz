@@ -59,4 +59,11 @@ public class DrinkCategoryActivity extends Activity {
         //Assign the listener to the list view
         listDrinks.setOnItemClickListener(itemClickListener);
     }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        cursor.close();
+        db.close();
+    }
 }
