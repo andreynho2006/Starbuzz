@@ -3,6 +3,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.hfad.starbuzz.R;
+
 public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "starbuzz";
@@ -23,7 +25,10 @@ public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpdate(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        insertDrink(db, "Latte", "Espresso and steamed milk", R.drawable.latte);
+        insertDrink(db, "Cappuccino", "Espresso, hot milk and steamed-milk foam",
+                R.drawable.cappuccino);
+        insertDrink(db, "Filter", "Our best drip coffee", R.drawable.filter);
     }
 
     private static void insertDrink(SQLiteDatabase db, String name,
