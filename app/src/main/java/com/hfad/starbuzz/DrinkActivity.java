@@ -37,6 +37,7 @@ public class DrinkActivity extends Activity {
                 String nameText = cursor.getString(0);
                 String descriptionText = cursor.getString(1);
                 int photoId = cursor.getInt(2);
+                boolean isFavorite = (cursor.getInt(3) == 1);
                 //Populate the drink name
                 TextView name = (TextView)findViewById(R.id.name);
                 name.setText(nameText);
