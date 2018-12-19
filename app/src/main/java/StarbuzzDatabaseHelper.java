@@ -1,3 +1,4 @@
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -23,5 +24,14 @@ public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpdate(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    private static void insertDrink(SQLiteDatabase db, String name,
+                                    String description, int resourceId) {
+        ContentValues drinkValues = new ContentValues();
+        drinkValues.put("NAME", name);
+        drinkValues.put("DESCRIPTION", description);
+        drinkValues.put("IMAGE_RESOURCE_ID", resourceId);
+        db.insert("DRINK", null, drinkValues);
     }
 }
