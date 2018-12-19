@@ -54,17 +54,5 @@ public class DrinkActivity extends Activity {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();
         }
-        //Populate the drink name
-        TextView name = (TextView)findViewById(R.id.name);
-        name.setText(drink.getName());
-
-        //populate the description
-        TextView description = (TextView)findViewById(R.id.description);
-        description.setText(drink.getDescription());
-
-        //Populate the drink image
-        ImageView photo = (ImageView)findViewById(R.id.photo);
-        photo.setImageResource(drink.getImageResourceId());
-        photo.setContentDescription(drink.getName());
     }
 }

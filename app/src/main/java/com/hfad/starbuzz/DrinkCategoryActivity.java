@@ -46,16 +46,13 @@ public class DrinkCategoryActivity extends Activity {
             toast.show();
         }
 
-        //Create the Listener
-        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
-            @Override
+        //Create a listener to listen for clicks in the list view
+        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener(){
             public void onItemClick(AdapterView<?> listDrinks, View itemView, int position, long id) {
-                //pass the drink the user clicked on the Drinkactivity
-                Intent intent = new Intent(DrinkCategoryActivity.this, DrinkActivity.class);
-                intent.putExtra(DrinkActivity.EXTRA_DRINKID, (int) id);
-                startActionMode(intent);
+                //Pass the drink the user clicks on to DrinkActivity
+                Intent intent = new Intent(DrinkCategoryActivity.this, DrinkActivity.class);intent.putExtra(DrinkActivity.EXTRA_DRINKID, (int) id);startActivity(intent);
             }
-        };
+                };
         //Assign the listener to the list view
         listDrinks.setOnItemClickListener(itemClickListener);
     }
