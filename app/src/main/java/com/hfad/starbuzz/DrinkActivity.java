@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +49,9 @@ public class DrinkActivity extends Activity {
                 ImageView photo = (ImageView)findViewById(R.id.photo);
                 photo.setImageResource(photoId);
                 photo.setContentDescription(nameText);
+                //Populate the favorite checkbox
+                CheckBox favorite = (CheckBox)findViewById(R.id.favorite);
+                favorite.setChecked(isFavorite);
             }
             cursor.close();
             db.close();
