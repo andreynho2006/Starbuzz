@@ -76,4 +76,11 @@ public class TopLevelActivity extends Activity {
             }
         });
     }
+    //Close the cursor and database in the onDestroy() method
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        favoritesCursor.close();
+        db.close();
+    }
 }
